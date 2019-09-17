@@ -1,6 +1,6 @@
 import { INCREMENT, Action } from './actions';
 
-interface State {
+export interface State {
   howManyDonuts: number;
 }
 

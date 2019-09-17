@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
+import { connect } from 'react-redux';
+import { Dispatch } from 'redux';
+
+import { State } from './store/reducers';
+import { incrementDonuts } from './store/actions';
 import './App.css';
 
-const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+type StateProps = ReturnType<typeof mapStateToProps>;
+type DispatchProps = ReturnType<typeof mapDispatchToProps>;
+type Props = StateProps & DispatchProps;
 
-export default App;
+const App: React.FC<Props> = ({ howManyDonuts, oneMoreDount }) => (
+  <div className='App'>
+    <main>
+      <span>How namy donuts? {howManyDonuts}</span>
+      <button onClick={() => oneMoreDount()}>One More</button>
+    </main>
+  </div>
+);
+
+const mapStateToProps = (state: State) => ({
+  howManyDonuts: state.howManyDonuts
+});
+
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+  oneMoreDount: () => dispatch(incrementDonuts())
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
