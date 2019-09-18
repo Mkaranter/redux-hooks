@@ -2,8 +2,12 @@ import React from 'react';
 
 import { Button } from './Button';
 
-export const DecrementWrapper = () => (
+interface Props {
+  oneLessDonut: () => void;
+}
+
+export const DecrementWrapper: React.FC<Props> = ({ oneLessDonut }) => (
   <div>
-    <Button title='Less donuts' onClick={() => console.log('less')} />
+    <Button title='Less donuts' onClick={oneLessDonut} />
   </div>
 );

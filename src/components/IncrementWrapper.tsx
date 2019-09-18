@@ -2,8 +2,12 @@ import React from 'react';
 
 import { Button } from './Button';
 
-export const DecrementWrapper = () => (
+interface Props {
+  oneMoreDonut: () => void;
+}
+
+export const IncrementWrapper: React.FC<Props> = ({ oneMoreDonut }) => (
   <div>
-    <Button title='More donuts' onClick={() => console.log('more')} />
+    <Button title='More donuts' onClick={oneMoreDonut} />
   </div>
 );

@@ -5,4 +5,6 @@ interface Props {
   onClick: () => void;
 }
 
-export const Button: React.FC<Props> = ({ title }) => <button>{title}</button>;
+export const Button: React.FC<Props> = ({ title, onClick }) => (
+  <button onClick={onClick}>{title}</button>
+);
