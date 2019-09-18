@@ -1,4 +1,4 @@
-import { INCREMENT, Action } from './actions';
+import { DECREMENT, INCREMENT, Action } from './actions';
 
 export interface State {
   howManyDonuts: number;
@@ -13,6 +13,10 @@ export const donutApp = (state: State = initState, action: Action) => {
     case INCREMENT:
       return {
         howManyDonuts: state.howManyDonuts + 1
+      };
+    case DECREMENT:
+      return {
+        howManyDonuts: state.howManyDonuts - 1
       };
     default:
       return state;
