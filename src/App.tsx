@@ -7,6 +7,7 @@ import { incrementDonuts, decrementDonuts } from './store/actions';
 import './App.css';
 import { IncrementWrapper } from './components/IncrementWrapper';
 import { DecrementWrapper } from './components/DecrementWrapper';
+import { Counter } from './components/Counter';
 
 type StateProps = ReturnType<typeof mapStateToProps>;
 type DispatchProps = ReturnType<typeof mapDispatchToProps>;
@@ -18,11 +19,9 @@ const App: React.FC<Props> = ({
   oneLessDonut
 }) => (
   <div className='App'>
-    <main>
-      <span>How namy donuts? {howManyDonuts}</span>
-      <IncrementWrapper oneMoreDonut={oneMoreDonut} />
-      <DecrementWrapper oneLessDonut={oneLessDonut} />
-    </main>
+    <Counter count={howManyDonuts} />
+    <IncrementWrapper oneMoreDonut={oneMoreDonut} />
+    <DecrementWrapper oneLessDonut={oneLessDonut} />
   </div>
 );
 
