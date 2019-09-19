@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const DecrementWrapper: React.FC<Props> = ({ oneLessDonut }) => (
-  <div className='DecrementWrapper'>
+  <div className='decrement button-wrapper'>
     <Button title='Less donuts' onClick={oneLessDonut} />
   </div>
 );

@@ -1,4 +1,5 @@
-.App {
+.app {
+  margin: 20vh 0 0 0;
   text-align: center;
   display: grid;
   grid-template-columns: 50px 1fr 1fr 50px;
@@ -7,14 +8,31 @@
     '. increment decrement .';
 }
 
-.Counter {
+.counter {
   grid-area: counter;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.7rem;
 }
 
-.DecrementWrapper {
+.decrement {
   grid-area: decrement;
+  background: tomato;
 }
 
-.IncrementWrapper {
+.increment {
   grid-area: increment;
+  background: gold;
+}
+
+.button {
+  height: 50%;
+}
+
+.button-wrapper {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

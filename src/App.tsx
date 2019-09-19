@@ -18,7 +18,7 @@ const App: React.FC<Props> = ({
   oneMoreDonut,
   oneLessDonut
 }) => (
-  <div className='App'>
+  <div className='app'>
     <Counter count={howManyDonuts} />
     <IncrementWrapper oneMoreDonut={oneMoreDonut} />
     <DecrementWrapper oneLessDonut={oneLessDonut} />
