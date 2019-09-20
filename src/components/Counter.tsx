@@ -1,11 +1,14 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, shallowEqual } from 'react-redux';
 
 import donut from './../assets/donut.png';
 import { State } from './../store/reducers';
 
 export const Counter: React.FC = () => {
-  const count = useSelector((state: State) => state.howManyDonuts);
+  const count = useSelector(
+    (state: State) => state.howManyDonuts,
+    shallowEqual
+  );
 
   return (
     <div className='counter'>
