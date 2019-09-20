@@ -1,13 +1,17 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
 import { Button } from './Button';
+import { decrementDonuts } from './../store/actions';
 
-interface Props {
-  oneLessDonut: () => void;
-}
+export const DecrementWrapper: React.FC = () => {
+  const dispatch = useDispatch();
 
-export const DecrementWrapper: React.FC<Props> = ({ oneLessDonut }) => (
-  <div className='decrement button-wrapper'>
-    <Button title='Less donuts' onClick={oneLessDonut} />
-  </div>
-);
+  const oneLessDonut = () => dispatch(decrementDonuts());
+
+  return (
+    <div className='decrement button-wrapper'>
+      <Button title='Less donuts' onClick={oneLessDonut} />
+    </div>
+  );
+};

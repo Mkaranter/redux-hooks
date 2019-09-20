@@ -1,12 +1,15 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+
 import donut from './../assets/donut.png';
+import { State } from './../store/reducers';
 
-interface Props {
-  count: number;
-}
+export const Counter: React.FC = () => {
+  const count = useSelector((state: State) => state.howManyDonuts);
 
-export const Counter: React.FC<Props> = ({ count }) => (
-  <div className='counter'>
-    <span>How many donuts? {count}</span> <img src={donut} alt='donut' />
-  </div>
-);
+  return (
+    <div className='counter'>
+      <span>How many donuts? {count}</span> <img src={donut} alt='donut' />
+    </div>
+  );
+};
