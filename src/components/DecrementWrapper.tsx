@@ -7,7 +7,9 @@ import { decrementDonuts } from './../store/actions';
 export const DecrementWrapper: React.FC = () => {
   const dispatch = useDispatch();
 
-  const oneLessDonut = useCallback(() => dispatch(decrementDonuts()), []);
+  const oneLessDonut = useCallback(() => dispatch(decrementDonuts()), [
+    dispatch
+  ]);
 
   return (
     <div className='decrement button-wrapper'>
