@@ -8,7 +8,7 @@ export const IncrementWrapper: React.FC = () => {
   const dispatch = useDispatch();
 
   const oneMoreDonut = useCallback(() => dispatch(incrementDonuts()), [
-    dispatch
+    incrementDonuts
   ]);
 
   return (
