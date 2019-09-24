@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { Button } from './Button';
 import { decrementDonuts } from './../store/actions';
 
-export const DecrementWrapper: React.FC = () => {
+export const DecrementWrapper = () => {
   const dispatch = useDispatch();
 
   const oneLessDonut = useCallback(() => dispatch(decrementDonuts()), [
